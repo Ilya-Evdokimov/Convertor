@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:y="clr-namespace:Convertor"
+             x:Class="Convertor.MainPage"
+             x:DataType="y:MainViewModel">
+             
+
+    <StackLayout>
+        <DatePicker Date="{Binding SelectedDate, Mode=TwoWay}" Format="d" MinimumDate="2000,1,1"></DatePicker>
+        <Grid Padding="50">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Picker Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Valutes}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding Valute1}"/>
+
+            <Picker Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Valutes}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding Valute2}"/>
+
+            <Entry Grid.Row="1" Grid.Column="0" Text="{Binding InputValue1, Mode=TwoWay}"></Entry>
+            <Entry Grid.Row="1" Grid.Column="1" Text="{Binding InputValue2, Mode=TwoWay}"></Entry>
+        </Grid>
+    </StackLayout>
+</ContentPage>
